@@ -14,7 +14,7 @@ function average(numbers) {
     }
   })
   if(cntNan>=0.75*len1){
-    return "NaN";//return Nan if most of the values are Nan
+    return NaN;//return Nan if most of the values are Nan
   }
   return ans/len //return the average
 }
