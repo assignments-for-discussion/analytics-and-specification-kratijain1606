@@ -1,21 +1,24 @@
 
 function average(numbers) {
-  let ans = 0;//initialize answer
-  let cntNan=0;
+  let cntNaN=0;//count of NaN
+
+  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);// function to count occurrences of a value in an array
+
   let len = numbers.length;//length of array
-  let len1 = len;//length of array
-  numbers.map((num,i)=>{
-    if(!isNaN(num)){
-      ans += num; //add value to ans if it is a number
-    }
-    else{
-      cntNan +=1; //increment cntNan if it is not a number
-      len -= 1 //if it is not a number, reduce the length of the array
-    }
-  })
-  if(cntNan>=0.75*len1){
-    return NaN;//return Nan if most of the values are Nan
+
+  cntNaN=countOccurrences(numbers,NaN);//count occurrences of NaN
+  
+  if(cntNaN>=0.75*len){
+    return NaN;//return Nan if most of the values are NaN
   }
-  return ans/len //return the average
+
+  const newArray = oldArray.filter(function (value) {
+    return !Number.isNaN(value);//filter out NaN
+  });//loop 1 to remove NaN
+
+  return newArray.reduce((a, b) => a + b, 0) / newArray.length;//return average
+//loop2 to calculate average
+
+
 }
 module.exports = {average};//export the function
