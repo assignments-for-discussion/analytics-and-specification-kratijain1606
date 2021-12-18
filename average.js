@@ -11,16 +11,18 @@ function average(numbers) {
 
   cntNaN=countOccurrences(numbers,NaN);//count occurrences of NaN
   
-  if(cntNaN>=0.75*len){
-    return NaN;//return Nan if most of the values are NaN
-  }
-
   const newArray = numbers.filter(function (value) {
     return !Number.isNaN(value);//filter out NaN
   });//loop 1 to remove NaN
 
-  return newArray.reduce((a, b) => a + b, 0) / newArray.length;//return average
-//loop2 to calculate average
+  if(cntNaN>=0.75*len){
+    return NaN;//return Nan if most of the values are NaN
+  }
+  else{
+    return newArray.reduce((a, b) => a + b, 0)/newArray.length;//return average
+    //loop2 to calculate average
+  }
+
 
 
 }

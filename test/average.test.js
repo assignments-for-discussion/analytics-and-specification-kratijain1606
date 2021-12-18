@@ -16,5 +16,5 @@ it('ignores NaN in the input', ()=> {
 });
 
 it('return NaN if most values are Nan in input', ()=> {
-  expect(average([1,NaN,NaN,NaN,NaN])).to.be.NaN;
+  expect(average([2,NaN,NaN,NaN,NaN])).to.be.NaN;
 });
