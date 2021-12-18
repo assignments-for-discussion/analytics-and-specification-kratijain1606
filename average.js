@@ -15,11 +15,11 @@ function average(numbers) {
     return NaN;//return Nan if most of the values are NaN
   }
 
-  const newArray = oldArray.filter(function (value) {
+  const filteredNumArray = numbers.filter(function (value) {
     return !Number.isNaN(value);//filter out NaN
   });//loop 1 to remove NaN
 
-  return newArray.reduce((a, b) => a + b, 0) / newArray.length;//return average
+  return filteredNumArray.reduce((a, b) => a + b, 0) / filteredNumArray.length;//return average
 //loop2 to calculate average
 
 
