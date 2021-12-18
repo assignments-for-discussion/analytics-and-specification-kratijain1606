@@ -2,14 +2,14 @@
 function average(numbers) {
   let cntNaN=0;//count of NaN
 
-  const countOccurrences = (arr, val) =>
+  const countNaN = (arr) =>
    arr.reduce((a, v) => 
-   (v === val ? a + 1 : a), 0);
+   (Number.isNaN(v) ? a + 1 : a), 0);
    // function to count occurrences of a value in an array
 
   let len = numbers.length;//length of array
 
-  cntNaN=countOccurrences(numbers,NaN);//count occurrences of NaN
+  cntNaN=countNaN(numbers);//count occurrences of NaN
   
   const newArray = numbers.filter(function (value) {
     return !Number.isNaN(value);//filter out NaN
