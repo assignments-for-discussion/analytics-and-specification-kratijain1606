@@ -2,7 +2,10 @@
 function average(numbers) {
   let cntNaN=0;//count of NaN
 
-  const countOccurrences = (arr, val) => arr.reduce((a, v) => (v === val ? a + 1 : a), 0);// function to count occurrences of a value in an array
+  const countOccurrences = (arr, val) =>
+   arr.reduce((a, v) => 
+   (v === val ? a + 1 : a), 0);
+   // function to count occurrences of a value in an array
 
   let len = numbers.length;//length of array
 
